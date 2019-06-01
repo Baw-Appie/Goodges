@@ -199,7 +199,7 @@ static BOOL hasFullyLoaded = NO;
             if([_prefs boolForKey:kCapitalizeFirstLetter]) {
                 appLabel = [NSString stringWithFormat:@"%@%@", [[appLabel substringToIndex:1] uppercaseString], [appLabel substringFromIndex:1]];
             }
-
+            if([[[NSLocale preferredLanguages] firstObject] isEqualToString:@"ko-KR"]) return [NSString stringWithFormat:@"%ld%@", (long)badgeValue, appLabel];
             return [NSString stringWithFormat:@"%ld %@", (long)badgeValue, appLabel];
         }
     }
