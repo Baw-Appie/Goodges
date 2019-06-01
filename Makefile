@@ -1,19 +1,15 @@
-ARCHS = arm64
-FINALPACKAGE = 1
+ARCHS = arm64 armv7
+OS := $(shell uname)
+ifeq ($(OS),Darwin)
+  ARCHS += arm64e
+endif
 
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = Goodges
-
-Goodges_FILES  = include/GGPrefsManager.m include/UIColor+Goodges.m
-Goodges_FILES += Goodges.xm
-
+Goodges_FILES  = Goodges.xm $(wildcard ./include/*.m)
 Goodges_FRAMEWORKS = UIKit CoreGraphics Foundation QuartzCore
-
-Goodges_CFLAGS += -Iinclude/
-
 Goodges_LIBRARIES = colorpicker applist
-
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 before-all::
@@ -23,5 +19,4 @@ after-install::
 	install.exec "killall -9 backboardd"
 
 SUBPROJECTS += prefs
-
 include $(THEOS_MAKE_PATH)/aggregate.mk

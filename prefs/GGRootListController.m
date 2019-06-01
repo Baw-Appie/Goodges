@@ -8,6 +8,9 @@
 - (void)paypal;
 
 @end
+@interface PSListController (Addition)
+- (void)_returnKeyPressed:(id)arg1;
+@end
 
 
 @implementation GGRootListController
@@ -67,7 +70,7 @@
     [self reloadSpecifierID:@"labelsUseCBSpec" animated:YES];
 }
 
--(void)_returnKeyPressed:(UIKeyboard *)keyboard {
+-(void)_returnKeyPressed:(id)keyboard {
     [self.view endEditing:YES];
 
     [super _returnKeyPressed:keyboard];

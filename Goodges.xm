@@ -20,10 +20,10 @@
  */
 #import <version.h>
 
-#import <GGPrefsManager.h>
-#import <UIColor+Goodges.h>
+#import "./include/GGPrefsManager.h"
+#import "./include/UIColor+Goodges.h"
 
-#import <ColorBadges.h>
+#import "./include/ColorBadges.h"
 #import <MobileIcons/MobileIcons.h>
 #import <SpringBoard/SBApplicationIcon.h>
 #import <SpringBoard/SBFolder.h>
@@ -37,6 +37,7 @@
 #import <SpringBoard/SBIconView.h>
 #import <SpringBoard/SBIconViewMap.h>
 #import <SpringBoard/SBDockIconListView.h>
+#import <UIKit/_UILegibilitySettings.h>
 
 #pragma mark - Static variables
 
