@@ -204,6 +204,7 @@ static BOOL hasFullyLoaded = NO;
         }
     }
 
+    if([_prefs boolForKey:kHideAllLabels]) return @"";
     return %orig();
 }
 
